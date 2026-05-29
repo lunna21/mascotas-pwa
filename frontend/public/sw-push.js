@@ -10,8 +10,8 @@ self.addEventListener("push", (event) => {
   const title = notification.title || "Nueva notificación";
   const options = {
     body: notification.body || "",
-    icon: notification.icon || "/icons/icon512_maskable.png",
-    data: notification.data || { url: "/" },
+    icon: "/logo.png",
+    data: notification.data || { url: "/mapa" },
   };
 
   event.waitUntil(self.registration.showNotification(title, options));
