@@ -107,9 +107,6 @@ export const usePushNotifications = () => {
       if (!subscription) return;
       
       await subscription.unsubscribe();
-      // Opcional: Avisar al backend para borrar la suscripción
-      // await api.delete('/push/subscriptions', { endpoint: subscription.endpoint });
-
       setSubscription(null);
       setIsSubscribed(false);
     } catch (err: any) {

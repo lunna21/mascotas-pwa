@@ -138,6 +138,12 @@ export const CensoNuevoPage = () => {
   }, []);
 
   useEffect(() => {
+    if (cameraActive && videoRef.current && streamRef.current) {
+      videoRef.current.srcObject = streamRef.current;
+    }
+  }, [cameraActive]);
+
+  useEffect(() => {
     const checkPermission = async () => {
       if (!("permissions" in navigator)) return;
 

@@ -143,14 +143,11 @@ export const MascotasPage = () => {
                         <td className="py-3 px-4">{m.edad}</td>
                         <td className="py-3 px-4">
                           {m.fotografia ? (
-                            <a
-                              href={m.fotografia}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="text-brand-primary font-semibold hover:underline"
-                            >
-                              Ver
-                            </a>
+                            <img
+                              src={m.fotografia}
+                              alt={`Foto de ${m.nombre}`}
+                              className="w-20 h-20 rounded-lg object-cover shadow-sm border border-slate-200"
+                            />
                           ) : (
                             <span className="text-slate-400">Sin foto</span>
                           )}
