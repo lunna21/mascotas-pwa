@@ -79,6 +79,7 @@ export const PersonaNuevaPage = () => {
   };
 
   if (success) {
+    const isOffline = !navigator.onLine;
     return (
       <div className="login-wrapper relative flex flex-col">
         {/* Elementos decorativos */}
@@ -95,13 +96,13 @@ export const PersonaNuevaPage = () => {
         <main className="flex-1 flex items-center justify-center p-4 relative z-10 w-full">
           <div className="bg-white/90 backdrop-blur-xl rounded-3xl shadow-xl p-10 text-center max-w-sm w-full border border-white/50 animate-slide-up">
             <div className="text-6xl mb-6 bg-green-100 w-24 h-24 rounded-full flex items-center justify-center mx-auto text-green-500 shadow-inner">
-              ✓
+              {isOffline ? "⏳" : "✓"}
             </div>
             <h2 className="text-2xl font-bold text-slate-800">
-              Persona registrada
+              {isOffline ? "Registro pendiente" : "Persona registrada"}
             </h2>
             <p className="text-slate-500 font-medium mt-3">
-              Volviendo al panel...
+              {isOffline ? "Se sincronizará al tener conexión..." : "Volviendo al panel..."}
             </p>
           </div>
         </main>
